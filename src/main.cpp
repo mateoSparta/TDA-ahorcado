@@ -26,6 +26,8 @@
 int main() {
 
     Ahorcado partida("COMEDIA", 5);
+    cout << ".:: Ahorcado ::." << endl << "Partida iniciada" << endl;
+	cout << "Chances: " << partida.obtenerChancesRestantes() << endl;
 
     return 0;
 }

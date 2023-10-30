@@ -15,14 +15,13 @@ Ahorcado::Ahorcado(string palabra, unsigned int chances) {
 
     if (chances > 0) {
         chancesTotales = chances;
-
     } else {
-
         /* si el valor es incorrecto asume el valor estándar */
         chancesTotales = 7;
     }
-
     chancesUsadas = 0;
 }
 
-
+unsigned int Ahorcado::obtenerChancesRestantes() {
+    return chancesTotales - chancesUsadas;
+}
