@@ -35,3 +35,22 @@ unsigned int Ahorcado::obtenerChancesRestantes() {
 string Ahorcado::obtenerPalabra() {
     return palabraEnmascarada;
 }
+
+bool Ahorcado::arriesgar(char letra) {
+
+    int ocurrenciaDeLaLetra = 0;
+
+    if (obtenerChancesRestantes() > 0) {
+        for (unsigned int i = 0; i < palabraPorAdivinar.size(); i++) {
+            if (palabraPorAdivinar[i] == letra) {
+                palabraEnmascarada[i] = letra;
+                ocurrenciaDeLaLetra++;
+            }
+        }
+        if (ocurrenciaDeLaLetra == 0) {
+            chancesUsadas++;
+        }
+    }
+
+    return ocurrenciaDeLaLetra > 0;
+}

@@ -27,10 +27,27 @@ using namespace std;
 
 int main() {
 
-    Ahorcado partida("COMEDIA", 5);
-    cout << ".:: Ahorcado ::." << endl << "Partida iniciada" << endl;
-	cout << "Chances: " << partida.obtenerChancesRestantes() << endl;
-	cout << "Palabra: " << partida.obtenerPalabra() << endl;
+	char letraIngresada;
+	std::string palabra = "COMEDIA";
+	Ahorcado partida(palabra, 5);
+	bool sigueJugando = true;
+
+	cout << ".:: Ahorcado ::." << endl << "Partida iniciada" << endl;
+
+	do {
+		cout << "Chances: " << partida.obtenerChancesRestantes() << endl;
+		cout << "Palabra: " << partida.obtenerPalabra() << endl;
+		cout << endl << "ingrese una letra mayuscula: ";
+		cin >> letraIngresada;
+		partida.arriesgar(letraIngresada);
+		if(partida.obtenerChancesRestantes() > 0 &&
+		   partida.obtenerPalabra() == palabra){
+			cout << "Felicitaciones la palabra era " <<  << endl;
+		} else if(partida.obtenerChancesRestantes() == 0){
+			sigueJugando = false
+			cout << "Te quedaste sin chances" << endl;
+		}
+	} while(sigueJugando);
 
     return 0;
 }

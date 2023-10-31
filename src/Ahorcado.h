@@ -38,6 +38,13 @@ class Ahorcado {
 		 *       desconocidas con '_' (guión bajo).
 		 */
 		std::string obtenerPalabra();
+
+        /*
+         * pre : tiene al menos una chance restante.
+         * post: evalúa la existencia de la letra en la palabra; si existe
+         *       la revela, en caso contrario consume una chance.
+         */
+        bool arriesgar(char letra);
 };
 
 #endif /* AHORCADO_H_ */
