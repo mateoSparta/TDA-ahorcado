@@ -29,13 +29,72 @@ int main() {
 
 	char letraIngresada;
 	std::string palabra = "COMEDIA";
-	Ahorcado partida(palabra, 5);
+	Ahorcado partida(palabra, 7);
 	bool sigueJugando = true;
+	int chances;
 
 	cout << ".:: Ahorcado ::." << endl << "Partida iniciada" << endl;
 
 	do {
-		cout << "Chances: " << partida.obtenerChancesRestantes() << endl;
+		chances = partida.obtenerChancesRestantes();
+		switch(chances){
+			case 0:
+				cout << "  ____   " << endl
+					 << " |    |  " << endl
+					 << " |    O  " << endl
+					 << " |   ||| " << endl
+					 << " |   /| " << endl
+					 << "_|_      " << endl;
+				break;
+			case 1:
+				cout << "  ____   " << endl
+					 << " |    |  " << endl
+					 << " |    O  " << endl
+					 << " |   ||| " << endl
+					 << " |   /   " << endl
+					 << "_|_      " << endl;
+				break;
+			case 2:
+				cout << "  ____   " << endl
+					 << " |    |  " << endl
+					 << " |    O  " << endl
+					 << " |   ||| " << endl
+					 << " |       " << endl
+					 << "_|_      " << endl;
+				break;
+			case 3:
+				cout << "  ____  " << endl
+					 << " |    | " << endl
+					 << " |    O " << endl
+					 << " |   || " << endl
+					 << " |      " << endl
+					 << "_|_     " << endl;
+				break;
+			case 4:
+				cout << "  ____  " << endl
+					 << " |    | " << endl
+					 << " |    O " << endl
+					 << " |    | " << endl
+					 << " |      " << endl
+					 << "_|_     " << endl;
+				break;
+			case 5:
+				cout << "  ____  " << endl
+					 << " |    | " << endl
+					 << " |    O " << endl
+					 << " |      " << endl
+					 << " |      " << endl
+					 << "_|_     " << endl;
+				break;
+			case 6:
+				cout << "  ____  " << endl
+					 << " |    | " << endl
+					 << " |      " << endl
+					 << " |      " << endl
+					 << " |      " << endl
+					 << "_|_     " << endl;
+				break;
+		}
 		cout << "Palabra: " << partida.obtenerPalabra() << endl;
 		cout << endl << "ingrese una letra mayuscula: ";
 		cin >> letraIngresada;
@@ -52,5 +111,4 @@ int main() {
 
     return 0;
 }
-
 
