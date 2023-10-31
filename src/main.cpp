@@ -42,10 +42,11 @@ int main() {
 		partida.arriesgar(letraIngresada);
 		if(partida.obtenerChancesRestantes() > 0 &&
 		   partida.obtenerPalabra() == palabra){
-			cout << "Felicitaciones la palabra era " <<  << endl;
+			cout << "Felicitaciones la palabra era " << palabra << endl;
+			sigueJugando = false;
 		} else if(partida.obtenerChancesRestantes() == 0){
-			sigueJugando = false
 			cout << "Te quedaste sin chances" << endl;
+			sigueJugando = false;
 		}
 	} while(sigueJugando);
 
